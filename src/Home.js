@@ -1,7 +1,13 @@
 import './Home.css';
-import React from 'react'
+import React, {useCallback} from 'react';
+import { useNavigate } from "react-router-dom";
+
 
 function Home() {
+	const navigate = useNavigate();
+	const handleOnClick = () => {
+		navigate("/vote");
+	};
 	return (
 		<div className="App">
 
@@ -21,9 +27,11 @@ function Home() {
 			<div className="main">
 
 				<div className="newChallenge">
-					<button className="newButton">
+				
+					<button className="newButton" onClick={handleOnClick}>
 						+
 					</button>
+			
 				</div>
 
 
@@ -153,9 +161,6 @@ function Home() {
 
 				</div>
 			</div>
-
-
-
 		</div>
 	);
 }

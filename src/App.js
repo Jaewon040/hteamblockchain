@@ -18,7 +18,7 @@ function App() {
         </Link>
 
         <Link to="/vote">
-          <button>챌린지 개설</button>         
+               
         </Link>
         <Link to="/vote2">
           <button>챌린지 검증</button>         
