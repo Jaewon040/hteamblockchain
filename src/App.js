@@ -1,163 +1,41 @@
+import React from 'react'
+// eslint-disable-next-line 
+import { Link, Route, BrowserRouter as Router } from 'react-router-dom'
+import { Routes } from 'react-router'
 
-import './App.css';
+import Home from "./Home";
+import Vote from "./Vote";
+import Vote2 from "./Vote2";
+
 
 function App() {
-	return (
-		<div className="App">
 
-			<div className="nav">
+  return (
+    <Router>
+      <header>
+      <Link to="/">
+          <button>Main</button>         
+        </Link>
 
-				<div className="navLeft">
-					<div className="navName">제목</div>
-				</div>
-
-				<div className="navRight">
-					<button className="navMyProfile">My Profile</button>
-					<button className="navWallet">Wallet</button>
-				</div>
-
-			</div>
-
-			<div className="main">
-
-				<div className="newChallenge">
-					<button className="newButton">
-						+
-					</button>
-				</div>
-
-
-				<div className="viewChallenges">
-
-					<div className="challenge">
-						<div className="challengeTitle">
-							챌린지 제목1
-						</div>
-						<div className="challengeText">
-							챌린지 내용1
-						</div>
-						<div className="bottomBox">
-							<div className="challengeOperator">
-								개설자
-							</div>
-							<div className="challengeStatus">
-								현재 참여인원
-							</div>
-							<button>
-								JOIN
-							</button>
-						</div>
-
-					</div>
-
-					<div className="challenge">
-						<div className="challengeTitle">
-							챌린지 제목2
-						</div>
-						<div className="challengeText">
-							챌린지 내용2
-						</div>
-
-						<div className="bottomBox">
-							<div className="challengeOperator">
-								개설자
-							</div>
-							<div className="challengeStatus">
-								현재 참여인원
-							</div>
-							<button>
-								JOIN
-							</button>
-						</div>
-					</div>
-
-					<div className="challenge">
-						<div className="challengeTitle">
-							챌린지 제목3
-						</div>
-						<div className="challengeText">
-							챌린지 내용3
-						</div>
-						<div className="bottomBox">
-							<div className="challengeOperator">
-								개설자
-							</div>
-							<div className="challengeStatus">
-								현재 참여인원
-							</div>
-							<button>
-								JOIN
-							</button>
-						</div>
-					</div>
-
-					<div className="challenge">
-						<div className="challengeTitle">
-							챌린지 제목4
-						</div>
-						<div className="challengeText">
-							챌린지 내용4
-						</div>
-						<div className="bottomBox">
-							<div className="challengeOperator">
-								개설자
-							</div>
-							<div className="challengeStatus">
-								현재 참여인원
-							</div>
-							<button>
-								JOIN
-							</button>
-						</div>
-					</div>
-
-					<div className="challenge">
-						<div className="challengeTitle">
-							챌린지 제목5
-						</div>
-						<div className="challengeText">
-							챌린지 내용5
-						</div>
-						<div className="bottomBox">
-							<div className="challengeOperator">
-								개설자
-							</div>
-							<div className="challengeStatus">
-								현재 참여인원
-							</div>
-							<button>
-								JOIN
-							</button>
-						</div>
-					</div>
-
-					<div className="challenge">
-						<div className="challengeTitle">
-							챌린지 제목6
-						</div>
-						<div className="challengeText">
-							챌린지 내용6
-						</div>
-						<div className="bottomBox">
-							<div className="challengeOperator">
-								개설자
-							</div>
-							<div className="challengeStatus">
-								현재 참여인원
-							</div>
-							<button>
-								JOIN
-							</button>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-
-
+        <Link to="/vote">
+          <button>챌린지 개설</button>         
+        </Link>
+        <Link to="/vote2">
+          <button>챌린지 검증</button>         
+        </Link>
+      </header>
+      <hr/>
+      <main>
+		<div>
+		<Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/vote" element={<Vote />} />
+        <Route path="/vote2" element={<Vote2 />} />
+		</Routes>
 		</div>
-	);
-}
 
+      </main>
+    </Router>
+  );
+}
 export default App;

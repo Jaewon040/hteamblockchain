@@ -1,0 +1,101 @@
+.nav{
+    height: 70px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center; 
+  }
+  
+  .navRight{
+  display: flex;
+  margin-left: auto;
+  }
+  
+  .navName{
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 30px;
+  }
+  .navMyProfile{ 
+    border: none;
+    background-color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 24px;
+  }
+  .navWallet{
+    border: none;
+    background-color: white;
+    margin-left: 13px;
+    margin-right: 10px;
+    font-size: 24px;
+  
+    
+  }
+  
+  .newChallenge{
+    text-align: right;
+    margin-right: 19px;
+  }
+  .newButton{
+    border: none;
+    font-size: 40px;
+    font-weight: 300;
+    outline: none;
+  }
+  
+  
+  .main {
+          width: 1000px;
+          margin: 0 auto;
+      margin-top:60px;
+  }
+  
+  .viewChallenges{
+   text-align: center;
+   display: grid;
+   grid-column-gap: 25px;
+   grid-template-columns: repeat(3,1fr);
+   margin-top: 1.5625rem;
+   grid-row-gap: 19px;
+   row-gap: 19px;
+  }
+  
+  .challenge{
+    width: 250px;
+    height: 180px;
+    border: 1px solid #42c772;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding:1.5rem;
+    box-shadow: 0 3px 11px rgb(0 0 0 /5%);
+  }
+  
+  .challengeTitle{
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 1rem;
+  
+  }
+  .challengeText{
+    font-size: 16px;
+    width: 280;
+    height: 100;
+    margin-left:1px;
+    margin-bottom: 4rem;
+    margin-right: 1px;
+  }
+  .bottomBox{
+    margin-top: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  .challengeOperator{
+    color: grey;
+    font-size: 14px;
+  }
+  .challengeStatus{
+    color: grey;
+    font-size: 14px;
+  }
