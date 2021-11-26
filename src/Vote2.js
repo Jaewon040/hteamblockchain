@@ -13,10 +13,11 @@ import {
   EuiSplitPanel,
   EuiExpression,
   EuiCard,
-  cardFooterContent,
+  //cardFooterContent,
   EuiCode,
   EuiHorizontalRule
 } from '@elastic/eui';
+//import {cardFooterConten} from '@elastic/eui/lib';
 import {
   EuiFilePicker,
   EuiFlexGroup,
@@ -173,7 +174,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
           </div>
         }
         title="누군가1의 기록"
-        footer={cardFooterContent}>
+        >
       <EuiKeyPadMenu checkable={{ ariaLegend: 'Single select as radios' }}>
       <EuiKeyPadMenuItem
         checkable="single"
@@ -215,7 +216,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
           </div>
         }
         title="누군가2의 기록"
-        footer={cardFooterContent}>
+        >
       <EuiKeyPadMenu checkable={{ ariaLegend: 'Single select as radios' }}>
       <EuiKeyPadMenuItem
         checkable="single"
@@ -257,7 +258,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
           </div>
         }
         title="누군가3의 기록"
-        footer={cardFooterContent}>
+        >
       <EuiKeyPadMenu checkable={{ ariaLegend: 'Single select as radios' }}>
       <EuiKeyPadMenuItem
         checkable="single"

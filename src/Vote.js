@@ -1,43 +1,42 @@
 // eslint-disable-next-line 
 import { EuiHorizontalRule, EuiPageHeader, EuiPageBody, EuiConfirmModal} from '@elastic/eui';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '@elastic/eui/dist/eui_theme_light.css';
 import './Vote.css';
 import { EuiText } from '@elastic/eui';
 import { EuiFieldText , EuiFieldNumber, EuiTextArea, EuiDatePicker, EuiFlexGroup, EuiFlexItem, EuiButton} from '@elastic/eui';
 import moment from 'moment';
+import {atom, selector, useRecoilState, useRecoilValueLoadable} from 'recoil';
+import { topic, sDate, dDate, eth, num,  description} from './state';
 
+export default function(){
+const topic1 = useRecoilValueLoadable(topic);
+const startDate2 = useRecoilValueLoadable(sDate);
+const endDate3 = useRecoilValueLoadable(dDate);
+const num4 = useRecoilValueLoadable(num);
+const eth5 = useRecoilValueLoadable(eth);
+const description6 = useRecoilValueLoadable(description);
 
-export default function() {
   
-let [value1,  setValue1] = useState('');
-let [value4,  setValue4] = useState('');
-let [value5,  setValue5] = useState('');
-let [value6,  setValue6] = useState('');
-let [startDate, setStartDate] = useState(moment());
-let [endDate, setEndDate] = useState(moment());
+let [value1,  setValue1] = useRecoilState(topic);
+let [value4,  setValue4] = useRecoilState(num);
+let [value5,  setValue5] = useRecoilState(eth);
+let [value6,  setValue6] = useRecoilState(description);
+let [startDate, setStartDate] = useRecoilState(sDate);
+let [endDate, setEndDate] = useRecoilState(dDate);
 
-let challenge = {
-  title : value1,
-  startDate : startDate,
-  endDate : endDate,
-  maxNum : value4,  
-  ETH : value5,
-  description : value6
-}
-
-function deliver ({dataSet}){
+function deliver (){
   let challenge = {
-    title : value1,
-    startDate : startDate,
-    endDate : endDate,
-    maxNum : value4,  
-    ETH : value5,
-    description : value6
+    title : topic.contents,
+    startDate : sDate.contents,
+    endDate : dDate.contents,
+    maxNum : num.contents,  
+    ETH : eth.contents,
+    description : description.contents
   } 
 
-
-  
+  console.log(challenge);
+  return challenge;
 }
 
   
@@ -47,32 +46,44 @@ function deliver ({dataSet}){
   }
 
   let onChange1 = (e) => {
-    setValue1(e.target.value1);
+    setValue1(e.target.value);
+    topic.contents = e.target.value;
   };
 
   let onChange4 = (e) => {
-    setValue4(e.target.value4);
+    setValue4(e.target.value);
+    num.contents = e.target.value;
   };
 
   let onChange5 = (e) => {
-    setValue5(e.target.value5);
+    setValue5(e.target.value);
+    eth.contents = e.target.value;
   };
 
   let onChange6 = (e) => {
-    setValue6(e.target.value6);
+    setValue6(e.target.value);
+    description.contents = e.target.value;
   };
 
   let handleChange2 = (date) => {
     setStartDate(date);
+    sDate.contents = date;
   };
   let handleChange3 = (date) => {
     setEndDate(date);
+    dDate.contents = date;
   };
+
+  useEffect(()=>{
+
+  })
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const closeModal = () => setIsModalVisible(false);
   const showModal = () => {
-    console.log(setValue1);
+    //console.log(topic.contents);
+    //console.log(startDate);
+    deliver();
     setIsModalVisible(true);
     
   }
@@ -109,7 +120,7 @@ function deliver ({dataSet}){
       <EuiFieldText 
           className = "item"
           placeholder="주제를 입력하세요."
-          value={value1}
+          value={topic1.contents}
           onChange={(e) => onChange1(e)}
           textAlign="center" />
     </EuiFlexGroup>
@@ -139,7 +150,7 @@ function deliver ({dataSet}){
             <EuiFieldNumber
                 className = "item"
                 placeholder="숫자를 입력하세요."
-                value={value4}
+                value={num4.contents}
                 onChange={(e) => onChange4(e)}
                 aria-label="Use aria labels when no actual label is in use"
                 step="any"
@@ -155,7 +166,7 @@ function deliver ({dataSet}){
     <EuiFieldNumber
         className = "item"
         placeholder="숫자를 입력하세요."
-        value={value5}
+        value={eth5.contents}
         onChange={(e) => onChange5(e)}
         aria-label="Use aria labels when no actual label is in use"
         step="any"
@@ -169,7 +180,7 @@ function deliver ({dataSet}){
         <EuiTextArea
         placeholder="소개글을 입력하세요."
         aria-label="Use aria labels when no actual label is in use"
-        value={value6}
+        value={description6.contents}
         onChange={(e) => onChange6(e)}
         />
         <div id='result'></div>

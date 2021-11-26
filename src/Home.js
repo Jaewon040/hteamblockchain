@@ -1,6 +1,7 @@
 import './Home.css';
 import React, {useCallback} from 'react';
 import { useNavigate } from "react-router-dom";
+import {description, topic} from './state';
 
 
 function Home() {
@@ -14,7 +15,7 @@ function Home() {
 			<div className="nav">
 
 				<div className="navLeft">
-					<div className="navName">제목</div>
+					<div className="navName">challenges</div>
 				</div>
 
 				<div className="navRight">
@@ -39,10 +40,10 @@ function Home() {
 
 					<div className="challenge">
 						<div className="challengeTitle">
-							챌린지 제목1
+							{topic.contents}
 						</div>
 						<div className="challengeText">
-							챌린지 내용1
+							{description.contents}
 						</div>
 						<div className="bottomBox">
 							<div className="challengeOperator">
