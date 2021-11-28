@@ -1,3 +1,4 @@
+
 .nav{
     height: 70px;
     border-bottom: 1px solid black;
@@ -45,7 +46,8 @@
   
   
   .main {
-          width: 1000px;
+          max-width: 1000px;
+          min-width: 800;
           margin: 0 auto;
       margin-top:60px;
   }
@@ -53,7 +55,7 @@
   .viewChallenges{
    text-align: center;
    display: grid;
-   grid-column-gap: 25px;
+   grid-column-gap: 15px;
    grid-template-columns: repeat(3,1fr);
    margin-top: 1.5625rem;
    grid-row-gap: 19px;
@@ -63,7 +65,7 @@
   .challenge{
     width: 250px;
     height: 180px;
-    border: 1px solid #42c772;
+    border: 1.5px solid #1BA9F5;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -75,15 +77,17 @@
     font-size: 20px;
     text-align: left;
     margin-bottom: 1rem;
-  
+    font-weight: bold;
   }
   .challengeText{
     font-size: 16px;
     width: 280;
     height: 100;
     margin-left:1px;
-    margin-bottom: 4rem;
     margin-right: 1px;
+    margin-top: 0.5rem;
+    line-height: 1.3em;
+    word-break: keep-all;
   }
   .bottomBox{
     margin-top: auto;
@@ -91,11 +95,24 @@
     flex-flow: row nowrap;
     justify-content: space-between;
   }
-  .challengeOperator{
+  .cost{
     color: grey;
     font-size: 14px;
+    margin-top: 4px;
   }
   .challengeStatus{
     color: grey;
     font-size: 14px;
+    display: flex;
+    margin-top: 4px;
+  }
+
+  .eth_logo{
+    width: 12px;
+    height: 12px;
+  }
+  .joinButton{
+    font-size: 15px;
+    color:#082230;
+    font-weight: bold;
   }

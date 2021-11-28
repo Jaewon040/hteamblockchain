@@ -6,28 +6,39 @@ import { Routes } from 'react-router'
 import Home from "./Home";
 import Vote from "./Vote";
 import Vote2 from "./Vote2";
-
+import myChallengeTab from './myChallengeTab';
 
 function App() {
 
   return (
     <Router>
-      <header>
-      <Link to="/">
-          <button>Main</button>         
-        </Link>
+      <header><div className="nav">
+        <div className="navLeft">
+          <Link to="/">
+
+            <button className="navName">challenges</button>
+
+          </Link>
+        </div>
 
         <Link to="/vote">
-               
+
         </Link>
-        <Link to="/vote2">
-          <button>챌린지 검증</button>         
-        </Link>
+        <div className="navRight">
+
+          <Link to="/vote2">
+            <button className="navMyProfile">My Challenges</button>
+          </Link>
+          
+          <button className="navWallet">Wallet</button>
+          
+        </div>
+      </div>
       </header>
-      <hr/>
+      <hr />
       <main>
-		<div>
-		<Routes>
+        <div>
+          <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/vote" element={<Vote />} />
         <Route path="/vote2" element={<Vote2 />} />
