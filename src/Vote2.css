@@ -1,0 +1,9 @@
+.viewUsers{
+    text-align: center;
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 1.5625rem;
+    grid-row-gap: 19px;
+    row-gap: 19px;
+   }

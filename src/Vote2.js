@@ -1,4 +1,3 @@
-
 import React, {useState, Fragment} from 'react';
 import { useGeneratedHtmlId } from '@elastic/eui';
 import {
@@ -29,6 +28,7 @@ import {
   EuiButton
 } from '@elastic/eui';
 import '@elastic/eui/dist/eui_theme_light.css';
+import "./Vote2.css";
 
 import {
   EuiIcon,
@@ -45,9 +45,12 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
 
   const onChange = (files) => {
     setFiles(files.length > 0 ? Array.from(files) : []);
+    console.log("changed")
   };
 
   const radioGroupName = useGeneratedHtmlId({ prefix: 'radioGroup' });
+  const radioGroupName2 = useGeneratedHtmlId({ prefix: 'radioGroup2' });
+  const radioGroupName3 = useGeneratedHtmlId({ prefix: 'radioGroup3' });
 
   const keypadRadioButtonId__1 = useGeneratedHtmlId({
     prefix: 'keypadRadioButton',
@@ -60,6 +63,18 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
   const keypadRadioButtonId__3 = useGeneratedHtmlId({
     prefix: 'keypadRadioButton',
     suffix: 'third',
+  });
+  const keypadRadioButtonId__4 = useGeneratedHtmlId({
+    prefix: 'keypadRadioButton',
+    suffix: 'fourth',
+  });
+  const keypadRadioButtonId__5 = useGeneratedHtmlId({
+    prefix: 'keypadRadioButton',
+    suffix: 'fifth',
+  });
+  const keypadRadioButtonId__6 = useGeneratedHtmlId({
+    prefix: 'keypadRadioButton',
+    suffix: 'sixth',
   });
 
   const [singleSelectedID, setSingleSelectedID] = useState(
@@ -78,6 +93,36 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
       label: 'Show bottom bar (without affordForDisplacement behavior)',
     },
   ];
+
+  const [users, setUsers] = useState([
+    {
+      id: 1,
+      address: '3558', // 지갑의 마지막 주소 4자리
+      file : "https://source.unsplash.com/400x200/?Nature"
+    },
+    {
+      id: 2,
+      address: '1670',
+      file : "https://source.unsplash.com/400x200/?Nature"
+    },
+    {
+      id: 3,
+      address: '1786',
+      file : "https://source.unsplash.com/400x200/?Nature"
+    },
+    {
+      id: 4,
+      address: '5978',
+      file : "https://source.unsplash.com/400x200/?Nature"
+    },
+   
+    {
+      id: 5,
+      address: '4405',
+      file : "https://source.unsplash.com/400x200/?Nature"
+    },
+  ]);
+
 
   const onSubmit = (optionId) => {
     setToggleIdSelected(optionId);
@@ -127,18 +172,15 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
 
     <Fragment>
       <EuiFlexGroup>
-
       <EuiFlexItem>
           <EuiText>
             <h3>Step1. Files attached</h3>
             {renderFiles()}
           </EuiText>
         </EuiFlexItem>
-
         <EuiFlexItem grow={2}>
           {/* DisplayToggles wrapper for Docs only */}
-          
-            <EuiFilePicker
+          <EuiFilePicker
               id={filePickerId}
               multiple
               initialPromptText="Select or drag and drop multiple files"
@@ -146,7 +188,6 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
               display={large ? 'large' : 'default'}
               aria-label="Use aria labels when no actual label is in use"
             />
-         
           <EuiSpacer />
         </EuiFlexItem>
       </EuiFlexGroup>
@@ -160,7 +201,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
       </EuiText>
     </EuiFlexItem>
 
-
+  <div className="viewUsers">
   <EuiFlexGroup gutterSize="l">
     <EuiFlexItem>
       <EuiCard
@@ -173,7 +214,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
             />
           </div>
         }
-        title="누군가1의 기록"
+        title= {users[0].address}
         >
       <EuiKeyPadMenu checkable={{ ariaLegend: 'Single select as radios' }}>
       <EuiKeyPadMenuItem
@@ -215,31 +256,31 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
             />
           </div>
         }
-        title="누군가2의 기록"
+        title={users[1].address}
         >
       <EuiKeyPadMenu checkable={{ ariaLegend: 'Single select as radios' }}>
       <EuiKeyPadMenuItem
         checkable="single"
-        name={radioGroupName}
-        id={keypadRadioButtonId__1}
+        name={radioGroupName2}
+        id={keypadRadioButtonId__3}
         label="Agree"
         onChange={(id) => {
           setSingleSelectedID(id);
         }}
-        isSelected={singleSelectedID === keypadRadioButtonId__1}
+        isSelected={singleSelectedID === keypadRadioButtonId__3}
       >
         <EuiIcon type="faceHappy" size="l" />
       </EuiKeyPadMenuItem>
 
       <EuiKeyPadMenuItem
         checkable="single"
-        name={radioGroupName}
-        id={keypadRadioButtonId__2}
+        name={radioGroupName2}
+        id={keypadRadioButtonId__4}
         label="Disagree"
         onChange={(id) => {
           setSingleSelectedID(id);
         }}
-        isSelected={singleSelectedID === keypadRadioButtonId__2}
+        isSelected={singleSelectedID === keypadRadioButtonId__4}
       >
         <EuiIcon type="faceSad" size="l" />
       </EuiKeyPadMenuItem>
@@ -257,31 +298,31 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
             />
           </div>
         }
-        title="누군가3의 기록"
+        title={users[2].address}
         >
       <EuiKeyPadMenu checkable={{ ariaLegend: 'Single select as radios' }}>
       <EuiKeyPadMenuItem
         checkable="single"
-        name={radioGroupName}
-        id={keypadRadioButtonId__1}
+        name={radioGroupName3}
+        id={keypadRadioButtonId__5}
         label="Agree"
         onChange={(id) => {
           setSingleSelectedID(id);
         }}
-        isSelected={singleSelectedID === keypadRadioButtonId__1}
+        isSelected={singleSelectedID === keypadRadioButtonId__5}
       >
         <EuiIcon type="faceHappy" size="l" />
       </EuiKeyPadMenuItem>
 
       <EuiKeyPadMenuItem
         checkable="single"
-        name={radioGroupName}
-        id={keypadRadioButtonId__2}
+        name={radioGroupName3}
+        id={keypadRadioButtonId__6}
         label="Disagree"
         onChange={(id) => {
           setSingleSelectedID(id);
         }}
-        isSelected={singleSelectedID === keypadRadioButtonId__2}
+        isSelected={singleSelectedID === keypadRadioButtonId__6}
       >
         <EuiIcon type="faceSad" size="l" />
       </EuiKeyPadMenuItem>
@@ -289,6 +330,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
       </EuiCard>
     </EuiFlexItem>
   </EuiFlexGroup>
+  </div>
               
     </EuiPageContentBody>
       </EuiPageContent>
@@ -305,7 +347,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
 
 <EuiPanel paddingSize="l">
   <EuiText>
-     <p>이재 모든 입무가 완수되었습니다.</p>
+     <p>이제 모든 입무가 완수되었습니다.</p>
     <p>당신에게 돌아올 보상을 기다리세요.</p>
   </EuiText>
 </EuiPanel>    

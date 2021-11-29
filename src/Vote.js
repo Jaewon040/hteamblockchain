@@ -86,6 +86,12 @@ function deliver (){
     setIsModalVisible(true);
     
   }
+  const moveToMain = () => {
+    setIsModalVisible(false);
+    console.log(topic.contents);
+    console.log("hey");
+    console.log(topic.contents);
+  }
   let modal;
 
   if (isModalVisible) {
@@ -93,12 +99,12 @@ function deliver (){
       <EuiConfirmModal
         title="챌린지를 만드시겠습니까?"
         onCancel={closeModal}
-        onConfirm={closeModal}
+        onConfirm={moveToMain}
         cancelButtonText="No, don't do it"
         confirmButtonText="Yes, do it"
         defaultFocusedButton="confirm"
       >
-        <p>수락 버튼을 누르면 설정하신 0.02 ETH가 출금됩니다.</p>
+        <p>수락 버튼을 누르면 설정하신 {eth.contents} ETH가 출금됩니다.</p>
       </EuiConfirmModal>
     );
   }
@@ -160,7 +166,7 @@ function deliver (){
     <EuiHorizontalRule size="half" />
     <EuiText textAlign="center">
 
-    <p>5. 챌린지에 베팅해야 하는 금액은 얼마인가요? (0.00 ETH)</p>
+    <p>5. 챌린지에 참가하기 위해 지불해야 하는 금액은 얼마인가요? (0.00 ETH)</p>
     <EuiFlexGroup justifyContent="center"> 
     <EuiFieldNumber
         className = "item"
@@ -196,7 +202,7 @@ function deliver (){
         <EuiButton fill 
           onClick={showModal} 
           type='submit'
-          formAction="http://localhost:3000/vote3"
+          formAction="http://localhost:3000/"
           size="m"
           >
           Submit
