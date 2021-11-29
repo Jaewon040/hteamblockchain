@@ -1,15 +1,17 @@
 import './Home.css';
-import React, {useCallback} from 'react';
+import React, {useCallback, useState} from 'react';
 import { useNavigate } from "react-router-dom";
 import {description, eth, num, topic} from './state';
 import {
 	EuiButtonIcon,
   	EuiFlexGroup,
-  	EuiFlexItem,
-  	EuiSpacer,
-  	EuiTitle,
-  	EuiCode,
+	EuiFlexItem,
+	EuiSpacer,
+	EuiTitle,
+	EuiCode,
   } from '@elastic/eui';
+import { Button } from 'react-bootstrap';
+import ListModal from '../src/MainModal/ListModal'
 
 
 function Home() {
@@ -17,7 +19,10 @@ function Home() {
 	const handleOnClick = () => {
 		navigate("/vote");
 	};
+	const[ListModalOn, setListModalOn]=useState(false);
 	return (
+		<>
+		<ListModal show={ListModalOn} onHide={()=> setListModalOn(false)} />
 		<div className="App">
 
 			{/* <div className="nav">
@@ -61,7 +66,7 @@ function Home() {
 								<div className="challengeStatus">
 									{num.contents}명 참여중
 								</div>
-								<EuiButtonIcon size="xs" iconType="arrowRight" />
+								<EuiButtonIcon size="xs" iconType="arrowRight" onClick={()=>setListModalOn(true)}/>
 							</div>
 
 						</div> : ''}
@@ -171,6 +176,7 @@ function Home() {
 				</div>
 			</div>
 		</div>
+		</>
 	);
 }
 

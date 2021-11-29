@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {atom, RecoilRoot, selector, useRecoilState} from 'recoil';
+import './bootstrap.min.css';
 
 ReactDOM.render(
   <RecoilRoot>

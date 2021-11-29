@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './myChallengeTab.css';
+import './MyChallengeTab.css';
 import {
     EuiBreadcrumbs,
     EuiButton,
@@ -11,7 +11,7 @@ import {
 
 export default function () {
     return (
-        <div className="myChallengeTab">
+        <div className="MyChallengeTab">
           <EuiText textAlign="center">
             Hello world
           </EuiText>
