@@ -6,7 +6,7 @@ import { Routes } from 'react-router'
 import Home from "./Home";
 import Vote from "./Vote";
 import Vote2 from "./Vote2";
-import myChallengeTab from './myChallengeTab';
+import MyChallengeTab from './MyChallengeTab';
 
 function App() {
 
@@ -26,11 +26,16 @@ function App() {
         </Link>
         <div className="navRight">
 
-          <Link to="/vote2">
-            <button className="navMyProfile">My Challenges</button>
-          </Link>
+        <Link to="/mychallenge">
+            <button className="navMyProfile"> My Challenges</button>
+        </Link>
           
           <button className="navWallet">Wallet</button>
+
+          <Link to="/vote2">
+          <button> 검증(임시버튼)</button>
+
+        </Link>
           
         </div>
       </div>
@@ -42,6 +47,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/vote" element={<Vote />} />
         <Route path="/vote2" element={<Vote2 />} />
+        <Route path="/mychallenge" element={<MyChallengeTab />} />
+    
 		</Routes>
 		</div>
 
