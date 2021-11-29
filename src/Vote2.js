@@ -14,7 +14,8 @@ import {
   EuiCard,
   //cardFooterContent,
   EuiCode,
-  EuiHorizontalRule
+  EuiHorizontalRule,
+  EuiRadioGroup
 } from '@elastic/eui';
 //import {cardFooterConten} from '@elastic/eui/lib';
 import {
@@ -76,6 +77,70 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
     prefix: 'keypadRadioButton',
     suffix: 'sixth',
   });
+
+  
+
+
+  const [nestedRadio, setNestedRadio] = useState('nestedRadio1');
+  const [nestedRadio2, setNestedRadio2] = useState('nestedRadio3');
+  const [nestedRadio3, setNestedRadio3] = useState('nestedRadio5');
+
+  const nestedRadios = [
+    {
+      id: 'nestedRadio1',
+      label: 'Agree',
+    },
+    {
+      id: 'nestedRadio2',
+      label: 'Disagree',
+    },
+  ];
+
+  const nestedRadios2 = [
+    {
+      id: 'nestedRadio3',
+      label: 'Agree',
+    },
+    {
+      id: 'nestedRadio4',
+      label: 'Disagree',
+    },
+  ];
+
+  const nestedRadios3 = [
+    {
+      id: 'nestedRadio5',
+      label: 'Agree',
+    },
+    {
+      id: 'nestedRadio6',
+      label: 'Disagree',
+    },
+  ];
+
+  const cardFooterContent = (
+    <EuiRadioGroup
+          options={nestedRadios}
+          idSelected={nestedRadio}
+          onChange={(nestedRadio) => setNestedRadio(nestedRadio)}
+        />
+  );
+
+  const cardFooterContent2 = (
+    <EuiRadioGroup
+          options={nestedRadios2}
+          idSelected={nestedRadio2}
+          onChange={(nestedRadio2) => setNestedRadio2(nestedRadio2)}
+        />
+  );
+
+  const cardFooterContent3 = (
+    <EuiRadioGroup
+          options={nestedRadios3}
+          idSelected={nestedRadio3}
+          onChange={(nestedRadio3) => setNestedRadio3(nestedRadio3)}
+        />
+  );
 
   const [singleSelectedID, setSingleSelectedID] = useState(
     keypadRadioButtonId__1
@@ -201,8 +266,8 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
       </EuiText>
     </EuiFlexItem>
 
-  <div className="viewUsers">
-  <EuiFlexGroup gutterSize="l">
+  
+  <EuiFlexGroup gutterSize="s">
     <EuiFlexItem>
       <EuiCard
         textAlign="left"
@@ -215,34 +280,8 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
           </div>
         }
         title= {users[0].address}
+        footer={cardFooterContent}
         >
-      <EuiKeyPadMenu checkable={{ ariaLegend: 'Single select as radios' }}>
-      <EuiKeyPadMenuItem
-        checkable="single"
-        name={radioGroupName}
-        id={keypadRadioButtonId__1}
-        label="Agree"
-        onChange={(id) => {
-          setSingleSelectedID(id);
-        }}
-        isSelected={singleSelectedID === keypadRadioButtonId__1}
-      >
-        <EuiIcon type="faceHappy" size="l" />
-      </EuiKeyPadMenuItem>
-
-      <EuiKeyPadMenuItem
-        checkable="single"
-        name={radioGroupName}
-        id={keypadRadioButtonId__2}
-        label="Disagree"
-        onChange={(id) => {
-          setSingleSelectedID(id);
-        }}
-        isSelected={singleSelectedID === keypadRadioButtonId__2}
-      >
-        <EuiIcon type="faceSad" size="l" />
-      </EuiKeyPadMenuItem>
-      </EuiKeyPadMenu>
       </EuiCard>
     </EuiFlexItem>
     <EuiFlexItem>
@@ -257,34 +296,9 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
           </div>
         }
         title={users[1].address}
+        footer={cardFooterContent2}
         >
-      <EuiKeyPadMenu checkable={{ ariaLegend: 'Single select as radios' }}>
-      <EuiKeyPadMenuItem
-        checkable="single"
-        name={radioGroupName2}
-        id={keypadRadioButtonId__3}
-        label="Agree"
-        onChange={(id) => {
-          setSingleSelectedID(id);
-        }}
-        isSelected={singleSelectedID === keypadRadioButtonId__3}
-      >
-        <EuiIcon type="faceHappy" size="l" />
-      </EuiKeyPadMenuItem>
-
-      <EuiKeyPadMenuItem
-        checkable="single"
-        name={radioGroupName2}
-        id={keypadRadioButtonId__4}
-        label="Disagree"
-        onChange={(id) => {
-          setSingleSelectedID(id);
-        }}
-        isSelected={singleSelectedID === keypadRadioButtonId__4}
-      >
-        <EuiIcon type="faceSad" size="l" />
-      </EuiKeyPadMenuItem>
-      </EuiKeyPadMenu>
+  
       </EuiCard>
     </EuiFlexItem>
     <EuiFlexItem>
@@ -299,38 +313,13 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
           </div>
         }
         title={users[2].address}
+        footer={cardFooterContent3}
         >
-      <EuiKeyPadMenu checkable={{ ariaLegend: 'Single select as radios' }}>
-      <EuiKeyPadMenuItem
-        checkable="single"
-        name={radioGroupName3}
-        id={keypadRadioButtonId__5}
-        label="Agree"
-        onChange={(id) => {
-          setSingleSelectedID(id);
-        }}
-        isSelected={singleSelectedID === keypadRadioButtonId__5}
-      >
-        <EuiIcon type="faceHappy" size="l" />
-      </EuiKeyPadMenuItem>
-
-      <EuiKeyPadMenuItem
-        checkable="single"
-        name={radioGroupName3}
-        id={keypadRadioButtonId__6}
-        label="Disagree"
-        onChange={(id) => {
-          setSingleSelectedID(id);
-        }}
-        isSelected={singleSelectedID === keypadRadioButtonId__6}
-      >
-        <EuiIcon type="faceSad" size="l" />
-      </EuiKeyPadMenuItem>
-      </EuiKeyPadMenu>
+    
       </EuiCard>
     </EuiFlexItem>
   </EuiFlexGroup>
-  </div>
+  
               
     </EuiPageContentBody>
       </EuiPageContent>
