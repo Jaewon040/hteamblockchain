@@ -2,7 +2,6 @@ import React from 'react'
 import {Modal,Button} from 'react-bootstrap'
 import {description, eth, num, topic} from '../state';
 
-
 const ListModal = ({show, onHide}) => {
 return(
     <Modal

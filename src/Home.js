@@ -1,7 +1,7 @@
 import './Home.css';
 import React, {useCallback, useState} from 'react';
 import { useNavigate } from "react-router-dom";
-import {description, eth, num, topic} from './state';
+import {description, eth, num, topic, dDate } from './state';
 import {
 	EuiButtonIcon,
   	EuiFlexGroup,
@@ -12,7 +12,7 @@ import {
   } from '@elastic/eui';
 import { Button } from 'react-bootstrap';
 import ListModal from '../src/MainModal/ListModal'
-
+import MyChallengeTab from './MyChallengeTab';
 
 function Home() {
 	const navigate = useNavigate();
@@ -64,7 +64,7 @@ function Home() {
 									{eth.contents} ETH
 								</div>
 								<div className="challengeStatus">
-									{num.contents}명 참여중
+									~{dDate.contents}
 								</div>
 								<EuiButtonIcon size="xs" iconType="arrowRight" onClick={()=>setListModalOn(true)}/>
 							</div>
@@ -87,7 +87,7 @@ function Home() {
 							0.01 ETH
 							</div>
 							<div className="challengeStatus">
-								12명 참여중
+								~21.10.11
 							</div>
 							<EuiButtonIcon size="xs" iconType="arrowRight"/>
 						</div>
@@ -107,7 +107,7 @@ function Home() {
 							0.003 ETH
 							</div>
 							<div className="challengeStatus">
-								21명 참여중
+							~21.12.16
 							</div>
 							<EuiButtonIcon size="xs" iconType="arrowRight"/>
 						</div>
@@ -126,7 +126,7 @@ function Home() {
 							0.007 ETH
 							</div>
 							<div className="challengeStatus">
-								9명 참여중
+							~21.12.19
 							</div>
 							<EuiButtonIcon size="xs" iconType="arrowRight"/>
 						</div>
@@ -145,7 +145,7 @@ function Home() {
 							0.01 ETH
 							</div>
 							<div className="challengeStatus">
-							7명 참여중
+							~21.12.11
 							</div>
 							<EuiButtonIcon size="xs" iconType="arrowRight"/>
 						</div>
@@ -164,7 +164,7 @@ function Home() {
 								0.01 ETH
 							</div>
 							<div className="challengeStatus">
-								22명 참여중
+							~21.12.22
 							</div>
 							<EuiButtonIcon size="xs" iconType="arrowRight"/>
 						</div>
@@ -179,5 +179,4 @@ function Home() {
 		</>
 	);
 }
-
 export default Home;
