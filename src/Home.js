@@ -10,7 +10,7 @@ import {
 	EuiTitle,
 	EuiCode,
   } from '@elastic/eui';
-import { Button } from 'react-bootstrap';
+//import { Button } from 'react-bootstrap';
 import ListModal from '../src/MainModal/ListModal'
 import MyChallengeTab from './MyChallengeTab';
 

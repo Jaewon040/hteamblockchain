@@ -66,18 +66,19 @@ function deliver (){
 
   let handleChange2 = (date) => {
     setStartDate(date);
-    sDate.contents = date;
+    sDate.contents = date.format("YYYY-MM-DD");
   };
   let handleChange3 = (date) => {
     setEndDate(date);
-    dDate.contents = date;
+    dDate.contents = date.format("YYYY-MM-DD");
   };
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const closeModal = () => setIsModalVisible(false);
   const showModal = () => {
     //console.log(topic.contents);
-    //console.log(startDate);
+    console.log(dDate.contents);
+    //console.log(dDate.contents);
     deliver();
     setIsModalVisible(true);
     

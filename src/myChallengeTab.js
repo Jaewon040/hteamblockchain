@@ -11,7 +11,6 @@ import {
 import {Modal,Button} from 'react-bootstrap';
 import {description, eth, num, topic} from './state';
 
-
 function MyChallengeTab() {
     return (
 

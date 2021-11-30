@@ -1,5 +1,3 @@
-
-
 var addrArray = [
   {
     id: 0,
