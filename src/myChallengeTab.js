@@ -36,8 +36,8 @@ function MyChallengeTab() {
             </div></div>
           <div className="clicks">
 
-            <Button style={{ marginRight: 10 }}>검증서류 제출 </Button>
-            <Button style={{ backgroundColor: 'white', color: '#4582ec' }}> 타인 검증하기</Button>
+            <Button style={{ marginRight: 10 }}> 검증서류 제출 </Button>
+            <Button style={{ backgroundColor: 'white', color: '#4582ec' }}> 타인 검증하기 </Button>
           </div>
         </div>
     </div>

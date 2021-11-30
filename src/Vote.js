@@ -66,11 +66,11 @@ function deliver (){
 
   let handleChange2 = (date) => {
     setStartDate(date);
-    sDate.contents = date.format("YYYY-MM-DD");
+    sDate.contents = date.format("YY.MM.DD");
   };
   let handleChange3 = (date) => {
     setEndDate(date);
-    dDate.contents = date.format("YYYY-MM-DD");
+    dDate.contents = date.format("YY.MM.DD");
   };
 
   const [isModalVisible, setIsModalVisible] = useState(false);
