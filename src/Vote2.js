@@ -188,9 +188,9 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
     },
   ]);
 
-
-  const onSubmit = (optionId) => {
-    setToggleIdSelected(optionId);
+  
+  const onSubmit = () => {
+    window.location.href = '/';
   };
 
   const renderFiles = () => {
@@ -279,7 +279,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
             />
           </div>
         }
-        title= {users[0].address}
+        title= "#5602의 기록"
         footer={cardFooterContent}
         >
       </EuiCard>
@@ -295,7 +295,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
             />
           </div>
         }
-        title={users[1].address}
+        title="#3386의 기록"
         footer={cardFooterContent2}
         >
   
@@ -312,7 +312,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
             />
           </div>
         }
-        title={users[2].address}
+        title="#9201의 기록"
         footer={cardFooterContent3}
         >
     
@@ -342,7 +342,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
 </EuiPanel>    
 </EuiPageBody>
 <EuiHorizontalRule size="half" />
-<p></p><p></p><p></p><p></p>
+
 
       {true && (
         <EuiBottomBar
@@ -351,7 +351,7 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
           <EuiFlexGroup justifyContent="flexEnd">
             <EuiFlexItem grow={false}>
               <EuiButton
-                onClick={() => setToggleIdSelected(null)}
+                onClick={onSubmit}
                 color="ghost"
                 size="m"
               >

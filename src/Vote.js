@@ -73,10 +73,6 @@ function deliver (){
     dDate.contents = date;
   };
 
-  useEffect(()=>{
-
-  })
-
   const [isModalVisible, setIsModalVisible] = useState(false);
   const closeModal = () => setIsModalVisible(false);
   const showModal = () => {
@@ -89,8 +85,7 @@ function deliver (){
   const moveToMain = () => {
     setIsModalVisible(false);
     console.log(topic.contents);
-    console.log("hey");
-    console.log(topic.contents);
+    window.location.href = '';
   }
   let modal;
 
@@ -99,7 +94,7 @@ function deliver (){
       <EuiConfirmModal
         title="챌린지를 만드시겠습니까?"
         onCancel={closeModal}
-        onConfirm={moveToMain}
+        onConfirm={closeModal}
         cancelButtonText="No, don't do it"
         confirmButtonText="Yes, do it"
         defaultFocusedButton="confirm"
