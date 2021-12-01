@@ -6,7 +6,8 @@ import { Routes } from 'react-router'
 import Home from "./Home";
 import Vote from "./Vote";
 import Vote2 from "./Vote2";
-import MyChallengeTab from './MyChallengeTab';
+import MyChallengeTab from 'MyChallengeTab';
+import Account from 'components/Account';
 
 function App() {
 
@@ -30,7 +31,8 @@ function App() {
             <button className="navMyProfile"> My Challenges</button>
         </Link>
           
-          <button className="navWallet">Wallet</button>
+          {/* <button className="navWallet">Wallet</button> */}
+          <Account/>
 
           <Link to="/vote2">
           <button> 검증(임시버튼)</button>
