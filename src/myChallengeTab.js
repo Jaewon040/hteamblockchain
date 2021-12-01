@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './MyChallengeTab.css';
+import 'MyChallengeTab.css';
 import {
     EuiBreadcrumbs,
     EuiButton,
