@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useMoralis, useChain } from "react-moralis";
 import { getEllipsisTxt } from "helpers/formatters"
-import Blockie from "components/Blockie"
+import Blockie from "./Blockie"
 
 // import MyChallengeTab from 'MyChallengeTab.css';
 

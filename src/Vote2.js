@@ -15,7 +15,8 @@ import {
   //cardFooterContent,
   EuiCode,
   EuiHorizontalRule,
-  EuiRadioGroup
+  EuiRadioGroup,
+  EuiFlexGrid
 } from '@elastic/eui';
 //import {cardFooterConten} from '@elastic/eui/lib';
 import {
@@ -49,115 +50,50 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
     console.log("changed")
   };
 
-  const radioGroupName = useGeneratedHtmlId({ prefix: 'radioGroup' });
-  const radioGroupName2 = useGeneratedHtmlId({ prefix: 'radioGroup2' });
-  const radioGroupName3 = useGeneratedHtmlId({ prefix: 'radioGroup3' });
+  const radioGroupItem = [
+    (useGeneratedHtmlId({ prefix: 'radioGroup0_agree' })), (useGeneratedHtmlId({ prefix: 'radioGroup0_disagree' })),  
+    (useGeneratedHtmlId({ prefix: 'radioGroup1_agree' })), (useGeneratedHtmlId({ prefix: 'radioGroup1_disagree' })),  
+    (useGeneratedHtmlId({ prefix: 'radioGroup2_agree' })), (useGeneratedHtmlId({ prefix: 'radioGroup2_disagree' })),  
+    (useGeneratedHtmlId({ prefix: 'radioGroup3_agree' })), (useGeneratedHtmlId({ prefix: 'radioGroup3_disagree' })),  
+    (useGeneratedHtmlId({ prefix: 'radioGroup4_agree' })), (useGeneratedHtmlId({ prefix: 'radioGroup4_disagree' })),  
+    
+  ];
+
+  //const radioGroupName2 = useGeneratedHtmlId({ prefix: 'radioGroup2' });
+  //const radioGroupName3 = useGeneratedHtmlId({ prefix: 'radioGroup3' });
 
   const keypadRadioButtonId__1 = useGeneratedHtmlId({
     prefix: 'keypadRadioButton',
     suffix: 'first',
   });
-  const keypadRadioButtonId__2 = useGeneratedHtmlId({
-    prefix: 'keypadRadioButton',
-    suffix: 'second',
-  });
-  const keypadRadioButtonId__3 = useGeneratedHtmlId({
-    prefix: 'keypadRadioButton',
-    suffix: 'third',
-  });
-  const keypadRadioButtonId__4 = useGeneratedHtmlId({
-    prefix: 'keypadRadioButton',
-    suffix: 'fourth',
-  });
-  const keypadRadioButtonId__5 = useGeneratedHtmlId({
-    prefix: 'keypadRadioButton',
-    suffix: 'fifth',
-  });
-  const keypadRadioButtonId__6 = useGeneratedHtmlId({
-    prefix: 'keypadRadioButton',
-    suffix: 'sixth',
-  });
 
-  
+  const [nestedRadio0, setNestedRadio0] = useState(radioGroupItem[0]);
+  const [nestedRadio1, setNestedRadio1] = useState(radioGroupItem[2]);
+  const [nestedRadio2, setNestedRadio2] = useState(radioGroupItem[4]);
+  const [nestedRadio3, setNestedRadio3] = useState(radioGroupItem[6]);
+  const [nestedRadio4, setNestedRadio4] = useState(radioGroupItem[8]);
+ 
 
+  const radios = [
+    [{ id: radioGroupItem[0], label: 'Agree'},{id: radioGroupItem[1], label: 'Disagree'}],
+    [{ id: radioGroupItem[2], label: 'Agree'},{id: radioGroupItem[3], label: 'Disagree'}],
+    [{ id: radioGroupItem[4], label: 'Agree'},{id: radioGroupItem[5], label: 'Disagree'}],
+    [{ id: radioGroupItem[6], label: 'Agree'},{id: radioGroupItem[7], label: 'Disagree'}],
+    [{ id: radioGroupItem[8], label: 'Agree'},{id: radioGroupItem[9], label: 'Disagree'}],
 
-  const [nestedRadio, setNestedRadio] = useState('nestedRadio1');
-  const [nestedRadio2, setNestedRadio2] = useState('nestedRadio3');
-  const [nestedRadio3, setNestedRadio3] = useState('nestedRadio5');
-
-  const nestedRadios = [
-    {
-      id: 'nestedRadio1',
-      label: 'Agree',
-    },
-    {
-      id: 'nestedRadio2',
-      label: 'Disagree',
-    },
   ];
 
-  const nestedRadios2 = [
-    {
-      id: 'nestedRadio3',
-      label: 'Agree',
-    },
-    {
-      id: 'nestedRadio4',
-      label: 'Disagree',
-    },
+  const cardFooterContent = [
+    (<EuiRadioGroup options={radios[0]} idSelected={nestedRadio0} onChange={(nestedRadio0) => setNestedRadio0(nestedRadio0)}/>),
+    (<EuiRadioGroup options={radios[1]} idSelected={nestedRadio1} onChange={(nestedRadio1) => setNestedRadio1(nestedRadio1)}/>),
+    (<EuiRadioGroup options={radios[2]} idSelected={nestedRadio2} onChange={(nestedRadio2) => setNestedRadio2(nestedRadio2)}/>),
+    (<EuiRadioGroup options={radios[3]} idSelected={nestedRadio3} onChange={(nestedRadio3) => setNestedRadio3(nestedRadio3)}/>),
+    (<EuiRadioGroup options={radios[4]} idSelected={nestedRadio4} onChange={(nestedRadio4) => setNestedRadio4(nestedRadio4)}/>),
   ];
 
-  const nestedRadios3 = [
-    {
-      id: 'nestedRadio5',
-      label: 'Agree',
-    },
-    {
-      id: 'nestedRadio6',
-      label: 'Disagree',
-    },
-  ];
-
-  const cardFooterContent = (
-    <EuiRadioGroup
-          options={nestedRadios}
-          idSelected={nestedRadio}
-          onChange={(nestedRadio) => setNestedRadio(nestedRadio)}
-        />
-  );
-
-  const cardFooterContent2 = (
-    <EuiRadioGroup
-          options={nestedRadios2}
-          idSelected={nestedRadio2}
-          onChange={(nestedRadio2) => setNestedRadio2(nestedRadio2)}
-        />
-  );
-
-  const cardFooterContent3 = (
-    <EuiRadioGroup
-          options={nestedRadios3}
-          idSelected={nestedRadio3}
-          onChange={(nestedRadio3) => setNestedRadio3(nestedRadio3)}
-        />
-  );
-
-  const [singleSelectedID, setSingleSelectedID] = useState(
-    keypadRadioButtonId__1
-  );
+ 
 
   const [toggleIdSelected, setToggleIdSelected] = useState(null);
-
-  const toggleButtons = [
-    {
-      id: 'bottomBarStandard',
-      label: 'Show bottom bar',
-    },
-    {
-      id: 'bottomBarWithoutAffordForDisplacement',
-      label: 'Show bottom bar (without affordForDisplacement behavior)',
-    },
-  ];
 
   const [users, setUsers] = useState([
     {
@@ -267,58 +203,73 @@ export default ({ button = <></>, content, sideNav, bottomBar }) => {
     </EuiFlexItem>
 
   
-  <EuiFlexGroup gutterSize="s">
+  <EuiFlexGrid columns={3}>
     <EuiFlexItem>
       <EuiCard
         textAlign="left"
         image={
           <div>
-            <img
-              src="https://source.unsplash.com/400x200/?Nature"
-              alt="Nature"
-            />
+            <img src="https://source.unsplash.com/400x200/?Nature" alt="Nature"/>
           </div>
         }
         title= "#5602의 기록"
-        footer={cardFooterContent}
+        footer={cardFooterContent[0]}
         >
       </EuiCard>
     </EuiFlexItem>
     <EuiFlexItem>
-    <EuiCard
+      <EuiCard
         textAlign="left"
         image={
           <div>
-            <img
-              src="https://source.unsplash.com/400x200/?Nature"
-              alt="Nature"
-            />
+            <img src="https://source.unsplash.com/400x200/?Nature" alt="Nature"/>
           </div>
         }
-        title="#3386의 기록"
-        footer={cardFooterContent2}
+        title= "#1209의 기록"
+        footer={cardFooterContent[1]}
         >
-  
       </EuiCard>
     </EuiFlexItem>
     <EuiFlexItem>
-    <EuiCard
+      <EuiCard
         textAlign="left"
         image={
           <div>
-            <img
-              src="https://source.unsplash.com/400x200/?Nature"
-              alt="Nature"
-            />
+            <img src="https://source.unsplash.com/400x200/?Nature" alt="Nature"/>
           </div>
         }
-        title="#9201의 기록"
-        footer={cardFooterContent3}
+        title= "#0081의 기록"
+        footer={cardFooterContent[2]}
         >
-    
       </EuiCard>
     </EuiFlexItem>
-  </EuiFlexGroup>
+    <EuiFlexItem>
+      <EuiCard
+        textAlign="left"
+        image={
+          <div>
+            <img src="https://source.unsplash.com/400x200/?Nature" alt="Nature"/>
+          </div>
+        }
+        title= "#6329의 기록"
+        footer={cardFooterContent[3]}
+        >
+      </EuiCard>
+    </EuiFlexItem>
+    <EuiFlexItem>
+      <EuiCard
+        textAlign="left"
+        image={
+          <div>
+            <img src="https://source.unsplash.com/400x200/?Nature" alt="Nature"/>
+          </div>
+        }
+        title= "#8872의 기록"
+        footer={cardFooterContent[4]}
+        >
+      </EuiCard>
+    </EuiFlexItem>
+  </EuiFlexGrid>
   
               
     </EuiPageContentBody>

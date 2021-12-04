@@ -6,8 +6,8 @@ import { Routes } from 'react-router'
 import Home from "./Home";
 import Vote from "./Vote";
 import Vote2 from "./Vote2";
-import MyChallengeTab from 'MyChallengeTab';
-import Account from 'components/Account';
+import MyChallengeTab from './MyChallengeTab';
+import Account from './components/Account';
 
 function App() {
 
