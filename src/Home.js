@@ -17,7 +17,7 @@ import MyChallengeTab from './MyChallengeTab';
 function Home() {
 	const navigate = useNavigate();
 	const handleOnClick = () => {
-		navigate("/vote");
+		navigate("/newchallenge");
 	};
 	const[ListModalOn, setListModalOn]=useState(false);
 	return (
