@@ -15,9 +15,9 @@ function App() {
       <header><div className="nav">
         <div className="navLeft">
           <Link to="/">
-
-            <button className="navName">challenges</button>
-
+          <div>
+          <img className="logo" alt="logo" src="img/logo.png" style={{height:65}}/>
+          </div>
           </Link>
         </div>
 

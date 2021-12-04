@@ -23,21 +23,7 @@ let [value6,  setValue6] = useRecoilState(description);
 let [startDate, setStartDate] = useRecoilState(sDate);
 let [endDate, setEndDate] = useRecoilState(dDate);
 
-function deliver (){
-  let challenge = {
-    title : topic.contents,
-    startDate : sDate.contents,
-    endDate : dDate.contents,
-    maxNum : num.contents,  
-    ETH : eth.contents,
-    description : description.contents
-  } 
 
-  console.log(challenge);
-  return challenge;
-}
-
-  
   function change({input}){
       if(input="") return (<EuiText color={'danger'} size={'m'}>입력해주세요.</EuiText>)
       else return (<EuiText color={'success'} size={'m'}>{input}</EuiText>)
@@ -46,6 +32,15 @@ function deliver (){
   let onChange1 = (e) => {
     setValue1(e.target.value);
     topic.contents = e.target.value;
+  };
+
+  let handleChange2 = (date) => {
+    setStartDate(date);
+    sDate.contents = date.format("YY.MM.DD");
+  };
+  let handleChange3 = (date) => {
+    setEndDate(date);
+    dDate.contents = date.format("YY.MM.DD");
   };
 
   let onChange4 = (e) => {
@@ -63,29 +58,13 @@ function deliver (){
     description.contents = e.target.value;
   };
 
-  let handleChange2 = (date) => {
-    setStartDate(date);
-    sDate.contents = date.format("YY.MM.DD");
-  };
-  let handleChange3 = (date) => {
-    setEndDate(date);
-    dDate.contents = date.format("YY.MM.DD");
-  };
-
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const closeModal = () => setIsModalVisible(false);
-  const showModal = () => {
-    //console.log(topic.contents);
-    console.log(dDate.contents);
-    //console.log(dDate.contents);
-    deliver();
-    setIsModalVisible(true);
-    
-  }
-  const moveToMain = () => {
+  const closeModal = () => {
+    window.location.href = "/";
     setIsModalVisible(false);
-    console.log(topic.contents);
-    window.location.href = '';
+    }
+  const showModal = () => {
+    setIsModalVisible(true);
   }
   let modal;
 
