@@ -2,7 +2,6 @@
 import { EuiHorizontalRule, EuiPageHeader, EuiPageBody, EuiConfirmModal} from '@elastic/eui';
 import React, {useEffect, useState} from 'react';
 import '@elastic/eui/dist/eui_theme_light.css';
-import './Vote.css';
 import { EuiText } from '@elastic/eui';
 import { EuiFieldText , EuiFieldNumber, EuiTextArea, EuiDatePicker, EuiFlexGroup, EuiFlexItem, EuiButton} from '@elastic/eui';
 import moment from 'moment';

@@ -4,10 +4,9 @@ import { Link, Route, BrowserRouter as Router } from 'react-router-dom'
 import { Routes } from 'react-router'
 
 import Home from "./Home";
-import Vote from "./Vote";
-import Vote2 from "./Vote2";
 import MyChallengeTab from './MyChallengeTab';
 import Account from './components/Account';
+import CreateChallenge from './CreateChallenge';
 
 function App() {
 
@@ -22,7 +21,7 @@ function App() {
           </Link>
         </div>
 
-        <Link to="/vote">
+        <Link to="/newchallenge">
 
         </Link>
         <div className="navRight">
@@ -34,10 +33,10 @@ function App() {
           {/* <button className="navWallet">Wallet</button> */}
           <Account/>
 
-          <Link to="/vote2">
+          {/*<Link to="/vote2">
           <button> 검증(임시버튼)</button>
 
-        </Link>
+          </Link>*/}
           
         </div>
       </div>
@@ -47,8 +46,8 @@ function App() {
         <div>
           <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/vote" element={<Vote />} />
-        <Route path="/vote2" element={<Vote2 />} />
+        <Route path="/newchallenge" element={<CreateChallenge />} />
+        {/*<Route path="/vote2" element={<Vote2 />} />*/}
         <Route path="/mychallenge" element={<MyChallengeTab />} />
     
 		</Routes>
