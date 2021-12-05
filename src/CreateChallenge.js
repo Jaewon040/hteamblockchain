@@ -60,7 +60,6 @@ let [endDate, setEndDate] = useRecoilState(dDate);
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const closeModal = () => {
-    window.location.href = "/";
     setIsModalVisible(false);
     }
   const showModal = () => {
